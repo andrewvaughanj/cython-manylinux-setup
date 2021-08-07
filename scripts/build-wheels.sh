@@ -1,4 +1,13 @@
 #!/bin/bash
+
+#
+# This script is a direct copy of:
+#
+#     https://github.com/pypa/python-manylinux-demo/blob/master/travis/build-wheels.sh
+#
+# where the package `python-manylinux-demo` has been changed to `pomona`
+#
+
 set -e -u -x
 
 function repair_wheel {
