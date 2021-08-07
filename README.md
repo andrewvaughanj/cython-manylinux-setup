@@ -12,6 +12,16 @@ The code in this repository will require you to have Docker installed, to allow 
 
 * [https://quay.io/repository/pypa/manylinux1_x86_64](https://quay.io/repository/pypa/manylinux1_x86_64)
 
+#### Vector Informatik specific notes
+
+If you are trying this demo under a corporate proxy where Docker cannot talk outside without additional configuration, please see the content of:
+
+* `vector/internalise_manylinux.sh`
+
+which demonstrates working making an internal version of `manylinux1_x86_64` configured to work with a corporate proxy.
+
+**Importantly**: if you need to use `vector/internalise_manylinux.sh` then you must prefix the `scripts/build.sh` with `DOCKER_IMAGE="vi/manylinux1"`.
+
 ### `pomona`
 
 The source code lives in the `pomona` folder and provides a very simple Python module (`pomona.py`) that simply `meow`s.
@@ -41,13 +51,26 @@ but where the package name has been changed from `python-manylinux-demo` to be `
 
 ### Generated wheels
 
-After running:
+To generate the wheels, you should run:
+
+#### Outside of Vector
 
 ```bash
+# Outside of Vector
 ./scripts/build.sh
 ```
 
-it will populate the folder `wheelhouse` with content such as:
+#### Inside of Vector
+
+```bash
+# Inside of Vector
+./vector/internalise_manylinux.sh
+DOCKER_IMAGE="vi/manylinux1" ./scripts/build.sh
+```
+
+### Result
+
+This will populate the folder `wheelhouse` with content such as:
 
 ```
 pomona-0.0.0-cp27-cp27m-manylinux_2_5_x86_64.manylinux1_x86_64.whl
