@@ -1,4 +1,4 @@
-# cython_main_setup
+# cython-manylinux-setup
 
 This repository contains a very simple example that combines Cython with [https://github.com/pypa/manylinux](https://github.com/pypa/manylinux) to create binary Python packages for Python 2.7 -> Python 3.9.
 
