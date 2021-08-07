@@ -11,7 +11,7 @@ extensions = [
 
 setup(
     name="pomona",
-    packages=["pomona"],
+    packages=["pomona", "pomona.tests"],
     ext_modules = cythonize(extensions),
     entry_points = {
         "console_scripts": [
