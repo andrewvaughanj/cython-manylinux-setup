@@ -8,13 +8,13 @@ It is used to demonstrate how to work with Cython, `setuptools` and `manylinux` 
 
 ### Requirements
 
-This script will require you to have Docker installed, to allow you to work with the [https://github.com/pypa/manylinux](https://github.com/pypa/manylinux) Docker images. This demo just uses:
+The code in this repository will require you to have Docker installed, to allow you to work with the [https://github.com/pypa/manylinux](https://github.com/pypa/manylinux) Docker images. This demo just uses:
 
 * [https://quay.io/repository/pypa/manylinux1_x86_64](https://quay.io/repository/pypa/manylinux1_x86_64)
 
-### `pomona
+### `pomona`
 
-The source code lives in the `pomona` folder and provides a very simple Python module that simply `meow`s.
+The source code lives in the `pomona` folder and provides a very simple Python module (`pomona.py`) that simply `meow`s.
 
 The only interesting point is `pomona/__main__.py` that provides a simple `main` to work with the `Pomona` class.
  
@@ -59,7 +59,7 @@ pomona-0.0.0-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.whl
 pomona-0.0.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.whl
 ```
 
-**because this folder was created by Docker, it is owned by root -- if you want to delete it, use `sudo`**
+**because this folder was created by Docker, it is owned by root -- if you want to delete it, use `sudo`**.
 
 ### Installing
 
